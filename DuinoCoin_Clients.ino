@@ -52,7 +52,7 @@ bool clients_connect(byte i)
 
   Serial.print("[" + String(i) + "]");
   Serial.println("Connecting to Duino-Coin server... with port " + String(ports[port_number]));
-
+  clients[i].setTimeout(500);                         // Starfruit modified
   if (!clients[i].connect(host, ports[port_number]))
   {
     Serial.print("[" + String(i) + "]");
@@ -102,6 +102,7 @@ void clients_loop()
       
       if (clientsWaitJob[i] == 4) {                    // Starfruit modified, to fetch version number and send request for MOTD
         if (clients[i].available()) {
+          clients[i].setTimeout(100);
           String buffer = clients[i].readStringUntil(END_TOKEN);
           Serial.print("[" + String(i) + "]");
           Serial.println("Connected to Pulse-Pool Server (v" + buffer + ")");
