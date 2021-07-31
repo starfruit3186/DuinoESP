@@ -282,14 +282,8 @@ String clients_readData(byte i)
 {
   String str = "";
   while (clients[i].available()) {
-    char c = clients[i].read();
-    if (c == END_TOKEN)
-    {
-      str = clientsBuffer[i];
-      clientsBuffer[i] = "";
-    }
-    else
-      clientsBuffer[i] += c;
+    clients[i].setTimeout(10);
+    str = clients[i].readStringUntil('\r');
   }
   return str;
 }
