@@ -101,8 +101,8 @@ void clients_loop()
     {
       
       if (clientsWaitJob[i] == 4) {                    // Starfruit modified, to fetch version number and send request for MOTD
+        clients[i].setTimeout(10);
         if (clients[i].available()) {
-          clients[i].setTimeout(100);
           String buffer = clients[i].readStringUntil(END_TOKEN);
           Serial.print("[" + String(i) + "]");
           Serial.println("Connected to Pulse-Pool Server (v" + buffer + ")");
