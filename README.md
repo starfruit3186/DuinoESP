@@ -1,3 +1,12 @@
+Please use the original DuinoCoin_Esp_Master.ino and DuinoCoin_Wire.ino by ricaun.
+
+Replace the whole DuinoCoin_Clients.ino with this one.
+
+Basically, the new DuinoCoin_Clients.ino only updated in order to switch to the new Pulse-Pool server. 
+Duino Coin Master server does not response to "JOB" command anymore.
+
+These are the major changes:
+
 1. Made changes for the ESP to connect to Pulse-Pool server:
 
     const char * host = "149.91.88.18";
