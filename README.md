@@ -1,3 +1,6 @@
+EDIT: These codes don't seem to work for most. Please refer back to ricaun's code.
+
+
 Please use the original DuinoCoin_Esp_Master.ino and DuinoCoin_Wire.ino by ricaun. They are now included here for your convenience.
 
 You only need to replace the whole DuinoCoin_Clients.ino with this one.
